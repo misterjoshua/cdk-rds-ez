@@ -20,7 +20,7 @@ export class CdkRdsEz extends cdk.Construct {
     super(scope, id);
 
     const queue = new sqs.Queue(this, 'CdkRdsEzQueue', {
-      visibilityTimeout: props.visibilityTimeout || cdk.Duration.seconds(300)
+      visibilityTimeout: props.visibilityTimeout || cdk.Duration.seconds(300),
     });
 
     const topic = new sns.Topic(this, 'CdkRdsEzTopic');
